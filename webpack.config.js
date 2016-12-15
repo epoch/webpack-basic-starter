@@ -4,13 +4,14 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+  devtool: 'inline-source-map',
   context: __dirname + '/src',
   entry: {
     app: './index.js'
   },
   output: {
     path: __dirname + '/dist',
-    filename: '[name].bundle.js',
+    filename: '[name].bundle.js'
   },
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({

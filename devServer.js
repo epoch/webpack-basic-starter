@@ -1,9 +1,11 @@
 var app = require('express')();
-var compiler = require('webpack')(require('./webpack.config'));
+var config = require('./webpack.config');
+var compiler = require('webpack')(config);
 const port = 3000;
 
 app.use(require('webpack-dev-middleware')(compiler, {
-	stats: 'errors-only'
+	stats: 'errors-only',
+	colors: true
 }));
 
 app.get('*', (req, res) => {
