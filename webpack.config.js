@@ -1,16 +1,17 @@
 // entry.app corresponds to output.filename [name]
 
 var webpack = require('webpack');
+var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   devtool: 'inline-source-map',
-  context: __dirname + '/src',
+  context: path.join(__dirname, 'src'),
   entry: {
     app: './index.js'
   },
   output: {
-    path: __dirname + '/dist',
+    path: path.join(__dirname, 'dist'),
     filename: '[name].bundle.js'
   },
   plugins: [
