@@ -12,7 +12,8 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: '[name].bundle.js'
+    filename: '[name].bundle.js',
+    publicPath: '/assets/'
   },
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
@@ -21,7 +22,8 @@ module.exports = {
       minChunks: 2
     }),
     new HtmlWebpackPlugin({
-      template: './index.html'
+      template: './index.html',
+      inject: 'body'
     })
   ],
   module: {
